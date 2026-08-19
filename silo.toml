@@ -1,0 +1,358 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# THE CANON
+#
+# Every agent receives this file, verbatim, in its system prompt. That is the
+# whole point of it: if the residents are to gossip about the same people, they
+# must be issued the same people. Edit freely; the agents will believe whatever
+# is written here without ever asking who wrote it.
+# ─────────────────────────────────────────────────────────────────────────────
+
+[station]
+name        = "Crow's Heart"
+designation = "H.M. DEEP SHELTER ESTABLISHMENT No. 4 (OVERSEAS)"
+located     = "beneath the sand sea of the Empty Quarter, on what was a British protectorate and is now a great deal of sand"
+sealed      = "thirty-one years ago"
+levels      = 144
+population  = 213
+summary     = """
+A British hardened shelter sunk into bedrock under the Empty Quarter, commissioned by a
+department that no longer exists, built as one of four, and the only one anybody has heard
+a signal from since. One hundred and forty-four levels down a central shaft. Two hundred
+and thirteen people, which is fourteen fewer than the design brief called comfortable and
+about ninety more than the hydroponics deck was drawn for.
+
+Nobody uses the designation. It has been Crow's Heart since before the doors shut and
+nobody now alive knows why, though there are four competing theories and one of them
+involves a surveyor who does not otherwise appear in any record.
+
+The surface is a hundred and thirty degrees of sand and nobody has been up in eleven years.
+There is still a mast, and the mast still pulls a signal, which is the only reason the
+party line has anything at all to talk about.
+
+Everything down here was built by British contractors to a British specification in the
+early years of a century nobody has news of any more. This explains the carpet on 5, the
+fact that there are three sizes of imperial bolt in a metric installation, and very nearly
+everything else.
+"""
+
+# ── THE MACHINERY ────────────────────────────────────────────────────────────
+# Every noun the residents complain about lives here.
+
+[[system]]
+name  = "The Spine"
+where = "levels 1 to 144"
+what  = "The central stair. Fourteen hundred and forty steps, each one two inches shallower than the standard, because the standard changed halfway through construction and nobody stopped."
+
+[[system]]
+name  = "The Trunk"
+where = "the shaft alongside the Spine"
+what  = "The goods lift. Dead since a cable fault in year nineteen. Officially 'awaiting parts'. There are no parts. There is a printed notice, laminated, renewed annually."
+
+[[system]]
+name  = "The Mast"
+where = "level 1, and a hundred metres of surface aerial above it"
+what  = "The only thing still talking to the outside world. Pulls news off whatever is left of the satellites. Jenny keeps it alive with repairs of increasing imagination and decreasing documentation."
+
+[[system]]
+name  = "The Stack"
+where = "the full column"
+what  = "Air handling. Scrubbers on 20, 71 and 118. The whole silo hums at roughly 50 Hz and nobody notices until it stops, at which point everybody notices simultaneously and says so."
+
+[[system]]
+name  = "Hydroponics"
+where = "levels 60 to 64"
+what  = "Five decks of grow lights and grievance. Feeds 213 people on a footprint drawn for 120. Mrs Trellis runs it the way a small country is run."
+
+[[system]]
+name  = "The Generators"
+where = "levels 130 to 136"
+what  = "Three geothermal units, of which two run. Generator Two has a bearing note you can hear on 128 and, on a quiet night, in your sleep."
+
+[[system]]
+name  = "The Sump"
+where = "level 144"
+what  = "Water reclamation, and the bottom of everything. The Sump Crew come up on the first of the month, take what they need, and say nothing at all."
+
+[[system]]
+name  = "The Long Room"
+where = "level 55"
+what  = "Recreation. One ping-pong table, one bat, one net held up with wire. The Sports Day trophy from year nineteen is on the shelf and nobody will move it."
+
+[[system]]
+name  = "Stores"
+where = "level 16"
+what  = "Everything the silo has. Sheila Braithwaite requires a chit. As of last month, obtaining a chit requires a chit."
+
+[[system]]
+name  = "The Party Line"
+where = "everywhere"
+what  = "A shared intercom circuit strung the length of the Spine. Everybody on it hears everything. This conversation is happening on it."
+
+# ── THE PRINCIPALS ───────────────────────────────────────────────────────────
+# The people gossip is actually about. Everyone on the line knows all of them.
+
+[[resident]]
+name = "Councillor Prudence Hallowes"
+level = 5
+role = "Administration"
+note = "Issues memoranda. The memoranda are numbered and the numbering begins at 13. Nobody has ever seen 1 through 12 and nobody has ever received a satisfactory answer about them."
+
+[[resident]]
+name = "Mr Alistair Prewitt"
+level = 3
+role = "Records"
+note = "Custodian of the only working typewriter. Will not permit it to be moved. Has referred to it as 'the machine' for so long that people have stopped asking which one."
+
+[[resident]]
+name = "Dennis Pargiter"
+level = 9
+role = "Comms technician"
+note = "Plays the euphonium at two in the morning, badly, directly above Jenny's bunk. Level 9 acoustics carry. He has learned a new piece. It is worse."
+
+[[resident]]
+name = "Sheila Braithwaite"
+level = 16
+role = "Stores"
+note = "Requires a chit. Requires, as of last month, a chit in order to obtain a chit. Has not acknowledged that this is a loop and will not be drawn on it."
+
+[[resident]]
+name = "Gordon Ackroyd"
+level = 18
+role = "Machining"
+note = "Known as Nine Fingers. Has told the story of the tenth four times and it has been a different machine on each occasion. Nobody presses him, partly out of tact and mostly because it is more entertaining this way."
+
+[[resident]]
+name = "The Rev. Colin Tewkesbury"
+level = 24
+role = "Nothing formally"
+note = "Is not ordained, has never claimed to be, and has corrected people about it for thirty-one years without once dislodging the title. Runs the funerals. Runs them rather well."
+
+[[resident]]
+name = "Dr Margaret Enderby"
+level = 30
+role = "Infirmary"
+note = "Known as Peggy, though not to her face and not by anyone under forty. Prescribes walking up the Spine for almost everything and is, infuriatingly, usually right."
+
+[[resident]]
+name = "Bunty Marchmont"
+level = 33
+role = "Laundry"
+note = "Knows everything about everyone, on the reasonable grounds that she washes it. Says nothing without being asked and very little after. Trades in favours and has never once been in deficit."
+
+[[resident]]
+name = "Norman Cleghorn"
+level = 41
+role = "Fitter, mid-levels"
+note = "Is owed forty-one days of leave dating from year eight, has raised it at every quarterly meeting since, and shows no sign of stopping. There is nowhere to take leave to. This is not the point and he will tell you so."
+
+[[resident]]
+name = "Sandy Fothergill"
+level = 47
+role = "Apprentice"
+note = "Nineteen. Born down here. Gemma's apprentice. Knows almost nothing, learns at a frankly alarming rate, and has never seen weather, which comes up more often than you would expect."
+
+[[resident]]
+name = "Trevor Nunnery"
+level = 74
+role = "Ducting, and the quiz"
+note = "Runs the Thursday quiz in the Long Room, eleven years unbroken. The questions have lately started being about the silo, and the last three rounds have been uncomfortably specific."
+
+[[resident]]
+name = "Mrs Enid Trellis"
+level = 60
+role = "Chief of Hydroponics"
+note = "Terrifying. Grows the only tomatoes worth the name and distributes them on a system she has never explained. Has not been successfully contradicted since year twenty-four and does not expect to start now."
+
+[[resident]]
+name = "Wilf Barraclough"
+level = 71
+role = "Scrubbers"
+note = "Communicates entirely in weather metaphor despite there being, and having been for thirty-one years, no weather. 'Bit close today' has a precise technical meaning that only he holds."
+
+[[resident]]
+name = "Clive Hepplewhite"
+level = 88
+role = "Mechanical, mid-levels"
+note = "Mark's shift partner. Catastrophically literal. Has never in his life understood a joke and has never once let that stop him replying to one, at length, with corrections."
+
+[[resident]]
+name = "The Meacham brothers"
+level = 97
+role = "Pipework, allegedly"
+note = "Run a still. Everybody knows about the still. Nobody says anything about the still. The Council has recently begun to gesture in the direction of the subject, which everyone agrees is a serious escalation."
+
+[[resident]]
+name = "The Registrar"
+level = 100
+role = "Keeper of the census"
+note = "Ambrose Sitwell, though nobody has used it in twenty years. Counts the population every quarter. His last two counts disagreed by one and he has offered no explanation and been asked, loudly, by everybody."
+
+[[resident]]
+name = "Morag Dunsire"
+level = 104
+role = "Deep electrical"
+note = "Playing correspondence chess with somebody on Level 12 at one move per week. The game began in year nine. It is, by common agreement, still roughly even, and both players now refuse to discuss it."
+
+[[resident]]
+name = "Verity Coldwell"
+level = 121
+role = "Deep-level electrical"
+note = "Bernard's neighbour and long-running adversary in the matter of the corridor thermostat, which she sets to 19 and he sets to 22, twice daily, for six years, without either of them ever once mentioning it aloud."
+
+[[resident]]
+name = "Old Fenwick"
+level = 133
+role = "Generator Two"
+note = "Has been about to retire for nine years. Knows the bearing note is getting worse. Will not say so on an open circuit and has said 'it's fine' so many times that the phrase has stopped meaning anything at all."
+
+[[resident]]
+name = "The Sump Crew"
+level = 144
+role = "Water reclamation"
+note = "Four of them. Possibly five. Come up on the first of the month, take what they need, and say nothing whatsoever. Universally assumed to know something. Nobody has established what."
+
+[[resident]]
+name = "Mrs Pankhurst"
+level = 0
+role = "Cat"
+note = "There is a cat. Nobody knows how, the manifest does not mention one, and thirty-one years is a long time for a cat. She is the single most politically significant entity in the silo and her movements are read the way other people read weather."
+
+# ── THE ROLL ─────────────────────────────────────────────────────────────────
+# The rest of the two hundred and thirteen, in brief. Not everybody is here;
+# most of the silo is background and should stay that way. Use these for
+# passing colour and keep them consistent.
+
+[[extra]]
+roll = """
+L-2 Hilda Ashcombe, filing. L-4 Ronnie Sedgemoor, admin, allergic to the carpet.
+L-6 Barbara Whitchurch, payroll, for a silo with no money. L-7 Ted Vellacott, aerial rigger, retired,
+still climbs. L-8 Joyce Anstruther, switchboard. L-10 Pat Kirkbride, cabling.
+L-11 Douglas Mainwaring, records assistant, resents it. L-13 Ivy Loveday, canteen, makes the good bread.
+L-14 Cyril Bagshaw, ninety-one, oldest resident, remembers the surface and will tell you.
+L-15 Nina Trewin, welding. L-17 Harold Frobisher, inventory, has never once been wrong.
+L-19 Molly Carbery, paint. L-21 Stan Rowbotham, scrubber deck. L-22 Edna Pinnock, seals and gaskets.
+L-23 Lewis Tregarthen, fitter, Cornish, homesick for a county that may not exist.
+L-25 Dot Wilberforce, sewing. L-26 Alan Threlfall, pumps. L-27 Winnie Ballantyne, nursing.
+L-28 Roy Sculthorpe, welding, deaf in one ear and lies about which.
+L-29 Marjorie Pennyfeather, dispensary. L-31 Eric Handforth, boilers.
+L-32 Glenys Pritchard, Welsh, choir of one. L-34 Bert Quilty, laundry, Bunty's second.
+L-35 Sylvia Rackham, hydroponics. L-36 Ken Openshaw, ducting. L-37 Vera Studholme, stores clerk.
+L-38 is Chief. L-39 Frank Loxley, machining. L-40 Peggy Ainsworth, no relation to the doctor
+and tired of saying so. L-42 Bill Trumper, fitter. L-43 Nancy Fairweather, lights.
+L-44 Sid Pargiter, Dennis's brother, tone deaf, encourages him.
+L-45 Rita Coldstream, filtration. L-46 Ernest Bulstrode, valves.
+L-48 Maureen Slack, hydroponics, feuding with Sylvia on 35 over a variety of bean.
+L-49 Terry Adlington, welding. L-50 Iris Nethercott, canteen.
+L-51 Reg Marchbank, ducting. L-52 Doris Chetwynd, seals. L-53 Hugh Penhaligon, pumps.
+L-54 Betty Ollerenshaw, laundry. L-56 Jack Widdicombe, ping-pong, undefeated, one bat.
+L-57 Elsie Garnock, wiring. L-58 Ralph Tunnicliffe, bearings. L-59 Ada Sowerbutts, canteen.
+L-61 Colin Sharrock, grow lights. L-63 Freda Blenkinsop, seed store, guards it.
+L-64 Walter Cheeseman, compost, has opinions. L-65 Nora Applewhaite, filtration.
+L-66 Dennis Tolhurst, not to be confused with Dennis on 9, and furious about it.
+L-67 Kath Rimmer, valves. L-68 Arthur Pennington, ducting, whistles.
+L-69 Lilian Boscawen, wiring. L-70 Sam Threadgold, scrubbers.
+L-72 Vi Cheshire, canteen. L-73 Ron Blakeway, pumps. L-75 Gladys Fenn, laundry.
+L-76 Neville Ackroyd, Gordon's cousin, all ten fingers, mentions it.
+L-77 Pearl Sankey, filtration. L-78 Cliff Ottery, machining. L-79 Maud Trickett, seals.
+L-80 Geoff Standish, bearings. L-81 Rose Wetherby, wiring. L-82 Harry Milburn, ducting.
+L-83 Connie Braithwaite, Sheila's daughter, refuses to work in Stores.
+L-84 Les Formby, pumps. L-85 Audrey Hesketh, canteen. L-86 Nigel Postlethwaite, valves.
+L-87 June Calderbank, filtration. L-89 Wally Skelmersdale, welding, snores audibly on 90.
+L-90 Ethel Crowhurst, laundry. L-91 Dave Ruddock, machining. L-92 Sybil Hankinson, seals.
+L-93 Peter Ravenscroft, bearings. L-94 Olive Tattersall, wiring. L-95 Ray Nuttall, ducting.
+L-96 Beryl Standen, canteen. L-98 Ken Draycott, pumps. L-99 Hazel Portway, filtration.
+L-101 Malcolm Yardley, records, deep. L-102 Sheila Ogden, the other Sheila, no chits.
+L-103 Fred Tunstall, welding. L-105 Brenda Kettleby, wiring. L-106 Ian Craddock, valves.
+L-107 Nell Fairhurst, laundry. L-108 Gerald Pickersgill, ducting, pedant.
+L-109 Ruby Aldercroft, canteen, deep. L-110 Tom Skevington, pumps.
+L-112 Josie Marlow, wiring. L-113 Alf Bickerstaff, bearings, deaf, happy.
+L-114 Dora Quennell, seals. L-115 Vic Openshaw, Ken's brother, ducting, worse at it.
+L-116 Lena Fothergill, Sandy's mother, filtration, worries.
+L-117 Charlie Rowntree, machining. L-118 Peggy Vance, scrubbers, saw the cat.
+L-119 Ernie Halstead, valves. L-120 Muriel Bagnall, wiring.
+L-122 Stanley Croxton, pumps. L-123 Jean Wolstenholme, laundry, deep.
+L-124 Ivor Penhale, welding. L-125 Marge Dunkerley, canteen, deep.
+L-126 Bob Threapleton, bearings. L-127 Cissie Gorst, seals.
+L-128 Len Hardcastle, hears the bearing note, has said so. L-129 Phyllis Ramsbottom, wiring.
+L-130 Wally Tench, Generator One. L-131 Ida Braithwaite, no relation, insists.
+L-132 Ken Gaunt, Generator Three, which does not run, so neither does he.
+L-134 Nellie Sowden, generator stores. L-135 Sid Ollerton, cooling.
+L-136 Grace Lidgett, cooling. L-137 to L-143 are plant, ducting and rumour.
+"""
+
+# ── RUNNING SITUATIONS ───────────────────────────────────────────────────────
+# These drift. The director rotates through them and the agents pick them up.
+# Keep them small, specific and unresolved. That is what makes them feel like
+# life rather than plot.
+
+[[situation]]
+tag = "recycler"
+text = "The number two water recycler on 62 has been making a harmonic for four days. Everyone has a theory. Nobody has a spanner that fits, because the fitting is imperial and everything within forty levels of it is metric."
+
+[[situation]]
+tag = "rations"
+text = "Ration Order 44 has cut coffee to two cups a day per head. It is the single most destabilising thing to happen down here in a decade and the Council has classified it as a minor adjustment."
+
+[[situation]]
+tag = "trunk"
+text = "There is a rumour somebody has been seen working on the Trunk lift. If true it would be the first genuine news in eleven years. The laminated 'awaiting parts' notice was renewed last month, which most people are reading as a definitive answer."
+
+[[situation]]
+tag = "census"
+text = "The Registrar's last two head counts disagree by one. 213, then 214. He has offered no explanation, is being asked by everybody, and has begun taking a different route to the canteen."
+
+[[situation]]
+tag = "surface"
+text = "The camera on the mast head has shown the same dune shape for three weeks. Dunes move. Nobody wants to be the one who says so on an open circuit, so instead everybody mentions it obliquely and waits."
+
+[[situation]]
+tag = "bearing"
+text = "Generator Two's bearing note has changed pitch. Len on 128 has heard it and said so. Old Fenwick says it is fine. Old Fenwick has said everything is fine for nine years and the phrase has worn through."
+
+[[situation]]
+tag = "euphonium"
+text = "Dennis Pargiter on 9 has learned a new piece for the euphonium. It is materially worse than the old piece. He practises it at two in the morning and his brother Sid on 44, who is tone deaf, has been encouraging him."
+
+[[situation]]
+tag = "thermostat"
+text = "The corridor thermostat on 121 has gone from 19 to 22 and back four times this week, against a historical average of two, and is being read across three levels as an escalation. Neither party has ever mentioned it aloud."
+
+[[situation]]
+tag = "memoranda"
+text = "Memorandum 47 has been issued. It concerns, in its own words, 'the matter previously raised'. Nobody has been able to establish which matter, and Councillor Hallowes has responded to enquiries by issuing Memorandum 48."
+
+[[situation]]
+tag = "quiz"
+text = "Trevor Nunnery's Thursday quiz in the Long Room has run eleven years unbroken. The questions have lately started being about the silo. Last week's picture round was four photographs of doors and everybody got them right, which was worse than getting them wrong."
+
+[[situation]]
+tag = "cat"
+text = "Mrs Pankhurst has been seen on 118, four levels lower than she has ever been recorded. Peggy Vance saw her. People are reading it the way people used to read weather, and two separate theories have already hardened into factions."
+
+[[situation]]
+tag = "still"
+text = "The Meacham brothers on 97 run a still. Everybody knows. Nobody says. The Council has recently begun gesturing at the subject in general terms, which is understood by all parties to be a shot across the bows and is being ignored magnificently."
+
+[[situation]]
+tag = "wednesday"
+text = "A dispute over whether the calendar slipped a day in year four. Roughly a third of the silo maintains that today is Thursday. Neither faction will yield, both hold their quiz nights accordingly, and Trevor now runs two."
+
+[[situation]]
+tag = "posters"
+text = "Somebody has been putting up posters. They are correctly formatted, properly headed, on the right paper, and say nothing whatsoever. Four have appeared. Nobody will admit to them and everybody has now read them several times."
+
+[[situation]]
+tag = "level111"
+text = "Level 111 was reallocated in year twenty-two. To what has never been stated. The door is not locked, which everybody agrees is considerably worse than if it were, and nobody has gone in."
+
+[[situation]]
+tag = "sportsday"
+text = "The incident at Sports Day in year nineteen is not discussed. The trophy remains on the shelf in the Long Room and nobody will move it, dust it, or look directly at it."
+
+[[situation]]
+tag = "chit"
+text = "Sheila Braithwaite in Stores now requires a chit in order to issue a chit. She has been shown that this is a closed loop, has read the demonstration carefully, and has declined to comment."
+
+[[situation]]
+tag = "leave"
+text = "Norman Cleghorn on 41 is owed forty-one days of leave dating from year eight and has raised it at every quarterly meeting for twenty-three years. There is nowhere to go. He maintains, correctly, that this is not the point."

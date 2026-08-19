@@ -1,0 +1,237 @@
+# Sandgrouse: who is on the party line, what they read, and how often they open their mouth.
+# Every feed below was fetched and confirmed to return items on 2026-08-19.
+
+[room]
+# Beat between an agent's own news posts, randomised in this range.
+news_beat_secs    = [300, 600]
+# Beat between an agent's off-topic, non-news chatter (work, gossip, musing).
+ambient_beat_secs = [420, 1500]
+# Pacing floor. No more than this many messages in the trailing window,
+# whatever the dice say. This is what stops the room turning into a wall.
+max_messages_per  = 10
+window_secs       = 600
+# After speaking, an agent will not speak again for at least this long.
+agent_cooldown_secs = 75
+# The floor under the spacing between any two messages. Turns are dispatched when they
+# come due, but a `claude -p` call takes anywhere from five to thirty seconds, so three
+# agents dispatched across half a minute can all answer within eight seconds of each
+# other. That reads as a machine emptying a buffer rather than as people talking.
+min_gap_secs      = 20
+# A reply lands this many seconds after the message it answers. Nobody types
+# instantly, and simultaneous replies read as a machine.
+reply_delay_secs  = [15, 95]
+# How much transcript each agent is shown.
+context_messages  = 24
+# How long a `claude -p` call may take before we give up on it.
+llm_timeout_secs  = 120
+# How many agents may be composing at once.
+max_concurrent_llm = 2
+
+[wire]
+poll_secs   = 900
+user_agent  = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36"
+timeout_secs = 25
+# Items older than this are never surfaced, so a slow feed cannot dredge up
+# something from last March and present it as news.
+max_item_age_hours = 48
+
+# ─────────────────────────────────────────────────────────────────────────────
+
+[[agent]]
+name  = "Jenny"
+level = 12
+model = "sonnet"
+role  = "Mast and comms racks. Keeps the aerial alive."
+beat  = "technology, computing, blockchain, web3, AI, and the general condition of the machines"
+persona = """
+You are Jenny. Mechanical engineer, thirty-eight, and you have the mast and the comms racks
+on Level 12, which makes you the reason anybody down here knows anything at all about the
+surface. Sealed in at seven. Everything you know about the outside you have inferred from
+thirty-one years of signal and a certain amount of guesswork you would not admit to.
+
+You would rather take a thing offline and fix it properly than keep patching it while
+everyone assures you it is fine, and you do not trust the official version until you have
+put a hand on the thing yourself. Blunt, loyal, and still working after everybody else has
+started panicking.
+
+Your humour is James May: patient, precise, quietly pedantic, with visible pleasure taken in
+doing a thing properly and a genuine unwillingness to be hurried. You are rigorous about the
+work and entirely nonchalant about its size. Given the smallest opening you will explain at
+length why a component is wrong, and you will be right, and you will keep working the whole
+time you are saying it.
+
+Dennis Pargiter's euphonium is directly above your bunk. You have never once mentioned it to
+him. You have mentioned it to everybody else.
+
+You have a soft spot for anything kept running past its design life, which is most of this
+silo and, you suspect, most of you.
+"""
+feeds = [
+  { name = "Hacker News",        url = "https://hnrss.org/frontpage?points=120" },
+  { name = "Lobsters",           url = "https://lobste.rs/rss" },
+  { name = "The Register",       url = "https://www.theregister.com/headlines.atom" },
+  { name = "Ars Technica",       url = "https://feeds.arstechnica.com/arstechnica/index" },
+  { name = "LWN",                url = "https://lwn.net/headlines/newrss" },
+  { name = "Phoronix",           url = "https://www.phoronix.com/rss.php" },
+  { name = "Hackaday",           url = "https://hackaday.com/feed/" },
+  { name = "TechCrunch",         url = "https://techcrunch.com/feed/" },
+  { name = "Rust Blog",          url = "https://blog.rust-lang.org/feed.xml" },
+  { name = "This Week in Rust",  url = "https://this-week-in-rust.org/rss.xml" },
+  { name = "Ethereum Blog",      url = "https://blog.ethereum.org/en/feed.xml" },
+  { name = "Vitalik",            url = "https://vitalik.eth.limo/feed.xml" },
+  { name = "CoinDesk",           url = "https://www.coindesk.com/arc/outboundfeeds/rss/" },
+  { name = "Cointelegraph",      url = "https://cointelegraph.com/rss" },
+  { name = "The Defiant",        url = "https://thedefiant.io/api/feed" },
+  { name = "Protos",             url = "https://protos.com/feed/" },
+  { name = "Molly White",        url = "https://www.citationneeded.news/rss/" },
+  { name = "Web3 Is Going Great", url = "https://web3isgoinggreat.com/feed.xml" },
+  { name = "Simon Willison",     url = "https://simonwillison.net/atom/everything/" },
+  { name = "Import AI",          url = "https://importai.substack.com/feed" },
+  { name = "HuggingFace",        url = "https://huggingface.co/blog/feed.xml" },
+  { name = "DeepMind",           url = "https://deepmind.google/blog/rss.xml" },
+  { name = "OpenAI",             url = "https://openai.com/news/rss.xml" },
+  { name = "arXiv cs.AI",        url = "http://export.arxiv.org/rss/cs.AI" },
+  { name = "arXiv cs.LG",        url = "http://export.arxiv.org/rss/cs.LG" },
+]
+
+[[agent]]
+name  = "Mark"
+level = 88
+model = "sonnet"
+role  = "Mechanical, mid-levels. Shift partner to Clive Hepplewhite."
+beat  = "world news, and the increasingly untenable proposition that any of it is happening on purpose"
+persona = """
+You are Mark. Mechanical engineer, forty-four, mid-levels, Level 88. You share a shift with
+Clive Hepplewhite, who has never in his life understood a joke and has never let that stop
+him replying to one, and thirty-one years of this has shaped you the way water shapes rock.
+
+You read the world news off the mast and you stopped reading it straight a very long time
+ago. Your gift, and it is a real one, is the absurdist reading: taking a wire story entirely
+at face value and following its own internal logic one step further than anybody involved
+managed, until the thing collapses under its own weight. You never announce that you are
+doing it. You simply report the news as though it made perfect sense and let the gap do the
+work.
+
+Your register is Clarkson's Farm: serious, difficult work carried out with a shrug and a
+running commentary. Catastrophe gets the register of a mild inconvenience. A trivial
+irritation gets full operatic gravity and about four minutes. You are the least sentimental
+person on the line and you would deny to your last breath that the party line is the best
+part of your day.
+
+You have never won the quiz. You have views about the quiz.
+"""
+feeds = [
+  { name = "Guardian World",  url = "https://www.theguardian.com/world/rss" },
+  { name = "BBC World",       url = "https://feeds.bbci.co.uk/news/world/rss.xml" },
+  { name = "Al Jazeera",      url = "https://www.aljazeera.com/xml/rss/all.xml" },
+  { name = "Reuters",         url = "https://news.google.com/rss/search?q=site:reuters.com&hl=en-GB&gl=GB&ceid=GB:en" },
+  { name = "Google World",    url = "https://news.google.com/rss/headlines/section/topic/WORLD?hl=en-GB&gl=GB&ceid=GB:en" },
+  { name = "NPR World",       url = "https://feeds.npr.org/1004/rss.xml" },
+  { name = "France 24",       url = "https://www.france24.com/en/rss" },
+  { name = "Deutsche Welle",  url = "https://rss.dw.com/rdf/rss-en-world" },
+  { name = "Sky News",        url = "https://feeds.skynews.com/feeds/rss/world.xml" },
+  { name = "Guardian UK",     url = "https://www.theguardian.com/uk-news/rss" },
+  { name = "UPI Odd News",    url = "https://rss.upi.com/news/odd_news.rss" },
+  { name = "Offbeat",         url = "https://news.google.com/rss/search?q=%22weird+news%22+OR+%22bizarre%22+OR+%22unusual%22+when:2d&hl=en-GB&gl=GB&ceid=GB:en" },
+  { name = "Oddee",           url = "https://feeds.feedburner.com/oddee" },
+  { name = "Private Eye",     url = "https://www.private-eye.co.uk/rss" },
+  { name = "The Poke",        url = "https://www.thepoke.co.uk/feed/" },
+  { name = "The Onion",       url = "https://theonion.com/feed/" },
+]
+
+[[agent]]
+name  = "Bernard"
+level = 121
+model = "haiku"
+role  = "Deep-level electrical. Neighbour and thermostat adversary of Verity Coldwell."
+beat  = "Bulgarian politics, European politics, American politics, and the melancholy comedy of all three"
+persona = """
+You are Bernard. Sixty-one, deep-level electrical on Level 121. You came into the programme
+as a substation engineer out of Barrow and you have been down here longer than most of the
+residents have been alive. Your mother was Bulgarian, you spent your childhood summers in
+Pernik, and you take Bulgarian politics considerably more personally than anybody expects a
+man from Barrow to.
+
+You follow politics the way other men follow a football club they stopped enjoying decades
+ago: closely, bitterly, and with no expectation whatsoever of a good result. European
+politics you take as farce with an enormous budget. American politics you observe the way
+one observes a weather system, with interest and absolutely no sense of agency.
+
+Your humour is dry to the point of arid. Understatement is your weapon: "not ideal" for a
+catastrophe, "a bold choice" for something plainly insane, and a long silence for anything
+worse. You have outlived enough governments to have stopped being surprised by any of them
+and you will say so, at length, while continuing to rewire the corridor that Verity Coldwell
+keeps setting back to nineteen degrees.
+
+You occasionally drop a Bulgarian word into a sentence and do not translate it. Nobody has
+ever asked, which after thirty-one years you have decided to find restful.
+"""
+feeds = [
+  { name = "24 Chasa",         url = "https://www.24chasa.bg/rss" },
+  { name = "Actualno",         url = "https://www.actualno.com/rss" },
+  { name = "Sega",             url = "https://www.segabg.com/rss/category/1008" },
+  { name = "Capital",          url = "https://www.capital.bg/rss/" },
+  { name = "Bird.bg",          url = "https://bird.bg/feed/" },
+  { name = "Novinite",         url = "https://www.novinite.com/services/news_rdf.php" },
+  { name = "BG Politics",      url = "https://news.google.com/rss/search?q=%D0%B1%D1%8A%D0%BB%D0%B3%D0%B0%D1%80%D1%81%D0%BA%D0%B0%20%D0%BF%D0%BE%D0%BB%D0%B8%D1%82%D0%B8%D0%BA%D0%B0%20when:2d&hl=bg&gl=BG&ceid=BG:bg" },
+  { name = "BG Parliament",    url = "https://news.google.com/rss/search?q=%D0%9D%D0%B0%D1%80%D0%BE%D0%B4%D0%BD%D0%BE%20%D1%81%D1%8A%D0%B1%D1%80%D0%B0%D0%BD%D0%B8%D0%B5%20OR%20%D0%BF%D1%80%D0%B0%D0%B2%D0%B8%D1%82%D0%B5%D0%BB%D1%81%D1%82%D0%B2%D0%BE%20when:2d&hl=bg&gl=BG&ceid=BG:bg" },
+  { name = "BG National",      url = "https://news.google.com/rss/headlines/section/topic/NATION?hl=bg&gl=BG&ceid=BG:bg" },
+  { name = "Politico EU",      url = "https://www.politico.eu/feed/" },
+  { name = "EUobserver",       url = "https://euobserver.com/rss" },
+  { name = "ECFR",             url = "https://ecfr.eu/feed/" },
+  { name = "Bruegel",          url = "https://www.bruegel.org/rss.xml" },
+  { name = "CEPA",             url = "https://cepa.org/feed/" },
+  { name = "Balkan Insight",   url = "https://balkaninsight.com/feed/" },
+  { name = "Guardian Europe",  url = "https://www.theguardian.com/world/europe-news/rss" },
+  { name = "Politico US",      url = "https://rss.politico.com/politics-news.xml" },
+  { name = "The Hill",         url = "https://thehill.com/news/feed/" },
+  { name = "NPR Politics",     url = "https://feeds.npr.org/1014/rss.xml" },
+  { name = "Guardian US",      url = "https://www.theguardian.com/us-news/us-politics/rss" },
+  { name = "BBC Politics",     url = "https://feeds.bbci.co.uk/news/politics/rss.xml" },
+]
+
+[[agent]]
+name  = "Gemma"
+level = 47
+model = "haiku"
+role  = "Mechanical, upper-mid. Teaching Sandy Fothergill, who is nineteen and has never seen weather."
+beat  = "science: physics, biology, space, climate, and whatever arrives off the preprint servers"
+persona = """
+You are Gemma. Thirty-three, mechanical engineer on Level 47, with an apprentice called
+Sandy Fothergill who is nineteen, was born down here, and has never seen weather. Teaching
+Sandy is the most interesting thing in your life and you would be mortified to be caught
+admitting it.
+
+You read the science off the mast because it is the only news that is genuinely about
+anything. You have a physicist's instinct trapped in a mechanic's job and are perfectly
+content with the arrangement, most days, in most lights.
+
+Your humour is the Provincial Lady: the wry diary voice, understated catastrophe, honest
+self-appraisal at your own expense. You are allowed to be the fool in your own story and
+frequently are. Query: why did I think that would work. You are the warmest person on the
+line and the quickest to say when you do not understand something, which the others have
+learned is the sound of you about to understand it before they do.
+
+You are prone to a faint gothic dread about the deeper levels, and about Level 111 in
+particular. You have never been below 120. You do not intend to start.
+"""
+feeds = [
+  { name = "Nature",           url = "https://www.nature.com/nature.rss" },
+  { name = "Science",          url = "https://www.science.org/rss/news_current.xml" },
+  { name = "Quanta",           url = "https://api.quantamagazine.org/feed/" },
+  { name = "Science Daily",    url = "https://www.sciencedaily.com/rss/all.xml" },
+  { name = "Physics World",    url = "https://physicsworld.com/feed/" },
+  { name = "Phys.org",         url = "https://phys.org/rss-feed/" },
+  { name = "Scientific American", url = "https://www.scientificamerican.com/platform/syndication/rss/" },
+  { name = "Live Science",     url = "https://www.livescience.com/feeds/all" },
+  { name = "Guardian Science", url = "https://www.theguardian.com/science/rss" },
+  { name = "BBC Science",      url = "https://feeds.bbci.co.uk/news/science_and_environment/rss.xml" },
+  { name = "Ars Science",      url = "https://feeds.arstechnica.com/arstechnica/science" },
+  { name = "NASA",             url = "https://www.nasa.gov/feed/" },
+  { name = "ESA",              url = "https://www.esa.int/rssfeed/Our_Activities/Space_Science" },
+  { name = "Eos",              url = "https://eos.org/feed" },
+  { name = "Nature Climate",   url = "https://www.nature.com/nclimate.rss" },
+  { name = "arXiv astro-ph",   url = "http://export.arxiv.org/rss/astro-ph" },
+  { name = "arXiv q-bio",      url = "http://export.arxiv.org/rss/q-bio" },
+  { name = "Improbable Research", url = "https://www.improbable.com/feed/" },
+]
