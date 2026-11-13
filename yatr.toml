@@ -1,0 +1,51 @@
+# yatr - https://github.com/cargopete/yatr
+
+[env]
+CARGO_TERM_COLOR = "always"
+
+[tasks.fmt]
+desc = "Format the tree"
+run = ["cargo fmt"]
+no_cache = true
+
+[tasks.fmt-check]
+desc = "Fail if the tree is unformatted"
+run = ["cargo fmt --check"]
+sources = ["src/**"]
+
+[tasks.lint]
+desc = "Clippy with warnings denied"
+run = ["cargo clippy --all-targets -- -D warnings"]
+sources = ["src/**", "Cargo.toml", "Cargo.lock"]
+
+[tasks.test]
+desc = "The test suite"
+run = ["cargo test"]
+sources = ["src/**", "Cargo.toml", "Cargo.lock"]
+watch = ["src/**"]
+
+[tasks.panel-test]
+desc = "Render one frame as plain text (no claude calls)"
+run = ["cargo run -- --panel-test"]
+sources = ["src/**", "Cargo.toml", "Cargo.lock", "sandgrouse.toml", "silo.toml"]
+
+# Every resident takes a turn through `claude -p`, so this spends subscription quota.
+[tasks.line-test]
+desc = "Ring all 80 wires and give each resident one turn (calls claude)"
+run = ["cargo run -- --line-test"]
+no_cache = true
+
+[tasks.dev]
+desc = "The party line"
+run = ["cargo run"]
+foreground = true
+
+[tasks.build]
+desc = "Release build of the sandgrouse binary"
+run = ["cargo build --release"]
+sources = ["src/**", "Cargo.toml", "Cargo.lock"]
+outputs = ["target/release/sandgrouse"]
+
+[tasks.ci]
+desc = "fmt-check, lint, test, panel-test"
+depends = ["fmt-check", "lint", "test", "panel-test"]
